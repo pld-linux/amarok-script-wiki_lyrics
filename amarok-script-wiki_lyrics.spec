@@ -10,7 +10,7 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://kde-apps.org/content/files/35151-%{scriptname}-%{version}.amarokscript.tar.bz2
 # Source0-md5:	36ab13187af3c171b359d0e5756ff611
-URL:		http://kde-apps.org/content/show.php?content=35151
+URL:		http://www.lyriki.com/
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
 Requires:	ruby-modules >= 1.8
