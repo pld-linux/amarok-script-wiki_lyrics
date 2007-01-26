@@ -3,6 +3,7 @@
 #   used that dependency.
 %define		scriptname	wiki_lyrics
 Summary:	A collection of lyrics scripts for amaroK
+Summary(pl):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
 Version:	0.9.1
 Release:	0.1
@@ -27,6 +28,23 @@ lyrics). All of these scripts can query the other ones when they can't
 provide the lyrics for a song.
 
 Supported sites:
+- Lyriki (www.lyriki.com)
+- LyricWiki (www.lyricwiki.org)
+- AZ Lyrics (www.azlyrics.com)
+- Jamendo (www.jamendo.com)
+- Leos Lyrics (www.leoslyrics.com)
+- Lyrc (lyrc.com.ar)
+- Not Popular (www.notpopular.com)
+- Sing365 (www.sing365.com)
+- Terra Letras (letras.terra.com.br)
+
+%description -l pl
+Zestaw wspó³pracuj±cych z ró¿nymi serwisami skryptów do pobierania
+tekstów utworów i opcjonalnie umieszczania tre¶ci na Lyriki.com lub
+LyricWiki.org (wiki dla tekstów utworów). Wszystkie te skrypty mog±
+odpytywaæ inne je¶li nie znajd± tekstu piosenki.
+
+Obs³ugiwane serwisy:
 - Lyriki (www.lyriki.com)
 - LyricWiki (www.lyricwiki.org)
 - AZ Lyrics (www.azlyrics.com)
