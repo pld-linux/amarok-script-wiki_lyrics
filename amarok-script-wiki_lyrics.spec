@@ -3,7 +3,7 @@
 #   used that dependency.
 %define		scriptname	wiki_lyrics
 Summary:	A collection of lyrics scripts for amaroK
-Summary(pl.UTF-8):   Zestaw skryptów do tekstów utworów dla amaroKa
+Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
 Version:	0.9.1
 Release:	0.1
