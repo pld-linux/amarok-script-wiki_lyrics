@@ -5,13 +5,13 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.9.1
+Version:	0.12.2
 Release:	0.1
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://kde-apps.org/content/files/35151-%{scriptname}-%{version}.amarokscript.tar.bz2
-# Source0-md5:	36ab13187af3c171b359d0e5756ff611
-URL:		http://www.lyriki.com/
+Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
+# Source0-md5:	c011f68ead2c6b608256174ec7c5b085
+URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
 Requires:	ruby-modules >= 1.8
@@ -31,10 +31,15 @@ Supported sites:
 - Lyriki (www.lyriki.com)
 - LyricWiki (www.lyricwiki.org)
 - AZ Lyrics (www.azlyrics.com)
+- Baidu MP3 (mp3.baidu.com)
+- Giitaayan (www.giitaayan.com)
 - Jamendo (www.jamendo.com)
 - Leos Lyrics (www.leoslyrics.com)
 - Lyrc (lyrc.com.ar)
+- Lyrics Download (www.lyricsdownload.com)
+- Lyrics Mania (www.lyricsmania.com)
 - Not Popular (www.notpopular.com)
+- Seek Lyrics (www.seeklyrics.com)
 - Sing365 (www.sing365.com)
 - Terra Letras (letras.terra.com.br)
 
@@ -48,36 +53,62 @@ Obsługiwane serwisy:
 - Lyriki (www.lyriki.com)
 - LyricWiki (www.lyricwiki.org)
 - AZ Lyrics (www.azlyrics.com)
+- Baidu MP3 (mp3.baidu.com)
+- Giitaayan (www.giitaayan.com)
 - Jamendo (www.jamendo.com)
 - Leos Lyrics (www.leoslyrics.com)
 - Lyrc (lyrc.com.ar)
+- Lyrics Download (www.lyricsdownload.com)
+- Lyrics Mania (www.lyricsmania.com)
 - Not Popular (www.notpopular.com)
+- Seek Lyrics (www.seeklyrics.com)
 - Sing365 (www.sing365.com)
 - Terra Letras (letras.terra.com.br)
 
 %prep
 %setup -q -n %{scriptname}
-rm -f *.bat
-rm -f *.kdev*
+rm *.kdev*
+rm -rf win tests
+rm {docs,amarok}/COPYING # GPL v2
+rm i18n/README # note about when editing files
 
 %{__sed} -i -e '1s,#!/usr/bin/env ruby,#!%{_bindir}/ruby,' *.rb
-
-mkdir pkg
-mv README *.spec *.rb pkg
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_scriptdir}/%{scriptname}
-cp -a pkg/* $RPM_BUILD_ROOT%{_scriptdir}/%{scriptname}
+cp -a . $RPM_BUILD_ROOT%{_scriptdir}/%{scriptname}
+rm -rf $RPM_BUILD_ROOT%{_scriptdir}/%{scriptname}/docs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog TODO
+%doc docs/ChangeLog docs/TODO docs/HOWTO.txt docs/README
 %dir %{_scriptdir}/%{scriptname}
-# README must be here in %files, not in %doc
-%{_scriptdir}/%{scriptname}/README
+
 %attr(755,root,root) %{_scriptdir}/%{scriptname}/*.rb
-%{_scriptdir}/%{scriptname}/*.spec
+
+%dir %{_scriptdir}/%{scriptname}/cli
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/cli/*.rb
+
+%dir %{_scriptdir}/%{scriptname}/gui
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/gui/*.rb
+
+%dir %{_scriptdir}/%{scriptname}/i18n
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/i18n/*.rb
+
+%dir %{_scriptdir}/%{scriptname}/itrans
+
+%dir %{_scriptdir}/%{scriptname}/utils
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/utils/*.rb
+
+%dir %{_scriptdir}/%{scriptname}/itrans
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/itrans/*
+
+%dir %{_scriptdir}/%{scriptname}/amarok
+# README must be here in %files, not in %doc
+%{_scriptdir}/%{scriptname}/amarok/README
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/amarok/*.rb
+%{_scriptdir}/%{scriptname}/amarok/*.spec
