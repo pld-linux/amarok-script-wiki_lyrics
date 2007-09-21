@@ -5,12 +5,12 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.12.2
-Release:	0.1
+Version:	0.12.3
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
-# Source0-md5:	c011f68ead2c6b608256174ec7c5b085
+# Source0-md5:	d807d25999757808b6c48a36fa9969bb
 URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
@@ -32,6 +32,7 @@ Supported sites:
 - LyricWiki (www.lyricwiki.org)
 - AZ Lyrics (www.azlyrics.com)
 - Baidu MP3 (mp3.baidu.com)
+- Dark Lyrics (www.darklyrics.com)
 - Giitaayan (www.giitaayan.com)
 - Jamendo (www.jamendo.com)
 - Leos Lyrics (www.leoslyrics.com)
@@ -54,6 +55,7 @@ Obsługiwane serwisy:
 - LyricWiki (www.lyricwiki.org)
 - AZ Lyrics (www.azlyrics.com)
 - Baidu MP3 (mp3.baidu.com)
+- Dark Lyrics (www.darklyrics.com)
 - Giitaayan (www.giitaayan.com)
 - Jamendo (www.jamendo.com)
 - Leos Lyrics (www.leoslyrics.com)
@@ -72,7 +74,7 @@ rm -rf win tests
 rm {docs,amarok}/COPYING # GPL v2
 rm i18n/README # note about when editing files
 
-%{__sed} -i -e '1s,#!/usr/bin/env ruby,#!%{_bindir}/ruby,' *.rb
+%{__sed} -i -e '1s,#!/usr/bin/env ruby,#!%{_bindir}/ruby,' *.rb amarok/*.rb cli/*.rb
 
 %install
 rm -rf $RPM_BUILD_ROOT
