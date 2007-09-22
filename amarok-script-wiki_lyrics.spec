@@ -6,7 +6,7 @@ Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
 Version:	0.12.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
@@ -76,6 +76,10 @@ rm i18n/README # note about when editing files
 
 %{__sed} -i -e '1s,#!/usr/bin/env ruby,#!%{_bindir}/ruby,' *.rb amarok/*.rb cli/*.rb
 
+# ELF 32-bit LSB executable, Intel 80386
+# TODO: package separately if it's really needed
+rm -f itrans/itrans
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_scriptdir}/%{scriptname}
@@ -100,8 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_scriptdir}/%{scriptname}/i18n
 %attr(755,root,root) %{_scriptdir}/%{scriptname}/i18n/*.rb
-
-%dir %{_scriptdir}/%{scriptname}/itrans
 
 %dir %{_scriptdir}/%{scriptname}/utils
 %attr(755,root,root) %{_scriptdir}/%{scriptname}/utils/*.rb
