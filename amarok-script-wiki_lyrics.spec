@@ -5,13 +5,12 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.12.4
-Release:	5
+Version:	0.12.5
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
-# Source0-md5:	b03c6dabdf87c1e2b0e4ae7e21144743
-Patch0:		%{name}-charset.patch
+# Source0-md5:	85b9596a4e2d1c56185ef17740c15eb8
 URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
@@ -29,21 +28,21 @@ lyrics). All of these scripts can query the other ones when they can't
 provide the lyrics for a song.
 
 Supported sites:
-- Lyriki (www.lyriki.com)
-- LyricWiki (www.lyricwiki.org)
-- AZ Lyrics (www.azlyrics.com)
-- Baidu MP3 (mp3.baidu.com)
-- Dark Lyrics (www.darklyrics.com)
-- Giitaayan (www.giitaayan.com)
-- Jamendo (www.jamendo.com)
-- Leos Lyrics (www.leoslyrics.com)
-- Lyrc (lyrc.com.ar)
-- Lyrics Download (www.lyricsdownload.com)
-- Lyrics Mania (www.lyricsmania.com)
-- Not Popular (www.notpopular.com)
-- Seek Lyrics (www.seeklyrics.com)
-- Sing365 (www.sing365.com)
-- Terra Letras (letras.terra.com.br)
+- Lyriki <www.lyriki.com>
+- LyricWiki <www.lyricwiki.org>
+- AZ Lyrics <www.azlyrics.com>
+- Baidu MP3 <mp3.baidu.com>
+- Dark Lyrics <www.darklyrics.com>
+- Giitaayan <www.giitaayan.com>
+- Jamendo <www.jamendo.com>
+- Leos Lyrics <www.leoslyrics.com>
+- Lyrc <lyrc.com.ar>
+- Lyrics Download <www.lyricsdownload.com>
+- Lyrics Mania <www.lyricsmania.com>
+- Not Popular <www.notpopular.com>
+- Seek Lyrics <www.seeklyrics.com>
+- Sing365 <www.sing365.com>
+- Terra Letras <letras.terra.com.br>
 
 %description -l pl.UTF-8
 Zestaw współpracujących z różnymi serwisami skryptów do pobierania
@@ -52,25 +51,24 @@ LyricWiki.org (wiki dla tekstów utworów). Wszystkie te skrypty mogą
 odpytywać inne jeśli nie znajdą tekstu piosenki.
 
 Obsługiwane serwisy:
-- Lyriki (www.lyriki.com)
-- LyricWiki (www.lyricwiki.org)
-- AZ Lyrics (www.azlyrics.com)
-- Baidu MP3 (mp3.baidu.com)
-- Dark Lyrics (www.darklyrics.com)
-- Giitaayan (www.giitaayan.com)
-- Jamendo (www.jamendo.com)
-- Leos Lyrics (www.leoslyrics.com)
-- Lyrc (lyrc.com.ar)
-- Lyrics Download (www.lyricsdownload.com)
-- Lyrics Mania (www.lyricsmania.com)
-- Not Popular (www.notpopular.com)
-- Seek Lyrics (www.seeklyrics.com)
-- Sing365 (www.sing365.com)
-- Terra Letras (letras.terra.com.br)
+- Lyriki <www.lyriki.com>
+- LyricWiki <www.lyricwiki.org>
+- AZ Lyrics <www.azlyrics.com>
+- Baidu MP3 <mp3.baidu.com>
+- Dark Lyrics <www.darklyrics.com>
+- Giitaayan <www.giitaayan.com>
+- Jamendo <www.jamendo.com>
+- Leos Lyrics <www.leoslyrics.com>
+- Lyrc <lyrc.com.ar>
+- Lyrics Download <www.lyricsdownload.com>
+- Lyrics Mania <www.lyricsmania.com>
+- Not Popular <www.notpopular.com>
+- Seek Lyrics <www.seeklyrics.com>
+- Sing365 <www.sing365.com>
+- Terra Letras <letras.terra.com.br>
 
 %prep
 %setup -q -n %{scriptname}
-%patch0 -p1
 rm *.kdev*
 rm -rf win tests
 rm {docs,amarok}/COPYING # GPL v2
