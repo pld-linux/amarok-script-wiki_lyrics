@@ -5,12 +5,12 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.12.9
+Version:	0.12.10
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
-# Source0-md5:	fe6ddf953367d7fa46f1b68ba6ebae2a
+# Source0-md5:	28e10eaa1c417cb9aee444697f7df686
 URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
