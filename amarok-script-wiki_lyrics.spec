@@ -5,12 +5,12 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.12.4
-Release:	2
+Version:	0.12.12
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
-# Source0-md5:	b03c6dabdf87c1e2b0e4ae7e21144743
+# Source0-md5:	58047a1ec715a5e3ce947210a0b6366d
 URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
@@ -28,21 +28,21 @@ lyrics). All of these scripts can query the other ones when they can't
 provide the lyrics for a song.
 
 Supported sites:
-- Lyriki (www.lyriki.com)
-- LyricWiki (www.lyricwiki.org)
-- AZ Lyrics (www.azlyrics.com)
-- Baidu MP3 (mp3.baidu.com)
-- Dark Lyrics (www.darklyrics.com)
-- Giitaayan (www.giitaayan.com)
-- Jamendo (www.jamendo.com)
-- Leos Lyrics (www.leoslyrics.com)
-- Lyrc (lyrc.com.ar)
-- Lyrics Download (www.lyricsdownload.com)
-- Lyrics Mania (www.lyricsmania.com)
-- Not Popular (www.notpopular.com)
-- Seek Lyrics (www.seeklyrics.com)
-- Sing365 (www.sing365.com)
-- Terra Letras (letras.terra.com.br)
+- Lyriki <www.lyriki.com>
+- LyricWiki <www.lyricwiki.org>
+- AZ Lyrics <www.azlyrics.com>
+- Baidu MP3 <mp3.baidu.com>
+- Dark Lyrics <www.darklyrics.com>
+- Giitaayan <www.giitaayan.com>
+- Jamendo <www.jamendo.com>
+- Leos Lyrics <www.leoslyrics.com>
+- Lyrc <lyrc.com.ar>
+- Lyrics Download <www.lyricsdownload.com>
+- Lyrics Mania <www.lyricsmania.com>
+- Not Popular <www.notpopular.com>
+- Seek Lyrics <www.seeklyrics.com>
+- Sing365 <www.sing365.com>
+- Terra Letras <letras.terra.com.br>
 
 %description -l pl.UTF-8
 Zestaw współpracujących z różnymi serwisami skryptów do pobierania
@@ -51,21 +51,21 @@ LyricWiki.org (wiki dla tekstów utworów). Wszystkie te skrypty mogą
 odpytywać inne jeśli nie znajdą tekstu piosenki.
 
 Obsługiwane serwisy:
-- Lyriki (www.lyriki.com)
-- LyricWiki (www.lyricwiki.org)
-- AZ Lyrics (www.azlyrics.com)
-- Baidu MP3 (mp3.baidu.com)
-- Dark Lyrics (www.darklyrics.com)
-- Giitaayan (www.giitaayan.com)
-- Jamendo (www.jamendo.com)
-- Leos Lyrics (www.leoslyrics.com)
-- Lyrc (lyrc.com.ar)
-- Lyrics Download (www.lyricsdownload.com)
-- Lyrics Mania (www.lyricsmania.com)
-- Not Popular (www.notpopular.com)
-- Seek Lyrics (www.seeklyrics.com)
-- Sing365 (www.sing365.com)
-- Terra Letras (letras.terra.com.br)
+- Lyriki <www.lyriki.com>
+- LyricWiki <www.lyricwiki.org>
+- AZ Lyrics <www.azlyrics.com>
+- Baidu MP3 <mp3.baidu.com>
+- Dark Lyrics <www.darklyrics.com>
+- Giitaayan <www.giitaayan.com>
+- Jamendo <www.jamendo.com>
+- Leos Lyrics <www.leoslyrics.com>
+- Lyrc <lyrc.com.ar>
+- Lyrics Download <www.lyricsdownload.com>
+- Lyrics Mania <www.lyricsmania.com>
+- Not Popular <www.notpopular.com>
+- Seek Lyrics <www.seeklyrics.com>
+- Sing365 <www.sing365.com>
+- Terra Letras <letras.terra.com.br>
 
 %prep
 %setup -q -n %{scriptname}
@@ -94,25 +94,30 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/ChangeLog docs/TODO docs/HOWTO.txt docs/README
 %dir %{_scriptdir}/%{scriptname}
 
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/*.rb
+%{_scriptdir}/%{scriptname}/*.rb
 
 %dir %{_scriptdir}/%{scriptname}/cli
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/cli/*.rb
+%{_scriptdir}/%{scriptname}/cli/*.rb
 
 %dir %{_scriptdir}/%{scriptname}/gui
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/gui/*.rb
+%{_scriptdir}/%{scriptname}/gui/*.rb
 
 %dir %{_scriptdir}/%{scriptname}/i18n
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/i18n/*.rb
+%{_scriptdir}/%{scriptname}/i18n/*.rb
 
 %dir %{_scriptdir}/%{scriptname}/utils
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/utils/*.rb
+%{_scriptdir}/%{scriptname}/utils/*.rb
 
 %dir %{_scriptdir}/%{scriptname}/itrans
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/itrans/*
+%{_scriptdir}/%{scriptname}/itrans/*
 
 %dir %{_scriptdir}/%{scriptname}/amarok
 # README must be here in %files, not in %doc
 %{_scriptdir}/%{scriptname}/amarok/README
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/amarok/*.rb
+%{_scriptdir}/%{scriptname}/amarok/amarok.rb
+%{_scriptdir}/%{scriptname}/amarok/amaroklyricsscript.rb
+%{_scriptdir}/%{scriptname}/amarok/pluginadapter.rb
+%{_scriptdir}/%{scriptname}/amarok/plugins.rb
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/amarok/pluginsmanager.rb
+%{_scriptdir}/%{scriptname}/amarok/wikipluginadapter.rb
 %{_scriptdir}/%{scriptname}/amarok/*.spec
