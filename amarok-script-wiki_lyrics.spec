@@ -5,12 +5,12 @@
 Summary:	A collection of lyrics scripts for amaroK
 Summary(pl.UTF-8):	Zestaw skryptów do tekstów utworów dla amaroKa
 Name:		amarok-script-wiki_lyrics
-Version:	0.12.12
+Version:	0.13.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://www.kde-apps.org/CONTENT/content-files/35151-wiki_lyrics-%{version}.amarokscript.tar.bz2
-# Source0-md5:	58047a1ec715a5e3ce947210a0b6366d
+# Source0-md5:	37662bcb3ed87f113b52c12b5a17470a
 URL:		http://www.lyriki.com/Help:Wiki-Lyrics_Script
 BuildRequires:	sed >= 4.0
 Requires:	amarok >= 1.4
@@ -113,11 +113,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_scriptdir}/%{scriptname}/amarok
 # README must be here in %files, not in %doc
+# also only one script should be executable, or amarok will attempt to think the others are also plugins
+%attr(755,root,root) %{_scriptdir}/%{scriptname}/amarok/wikilyrics.rb
 %{_scriptdir}/%{scriptname}/amarok/README
 %{_scriptdir}/%{scriptname}/amarok/amarok.rb
-%{_scriptdir}/%{scriptname}/amarok/amaroklyricsscript.rb
 %{_scriptdir}/%{scriptname}/amarok/pluginadapter.rb
 %{_scriptdir}/%{scriptname}/amarok/plugins.rb
-%attr(755,root,root) %{_scriptdir}/%{scriptname}/amarok/pluginsmanager.rb
 %{_scriptdir}/%{scriptname}/amarok/wikipluginadapter.rb
 %{_scriptdir}/%{scriptname}/amarok/*.spec
